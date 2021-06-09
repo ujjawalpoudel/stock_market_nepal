@@ -124,7 +124,7 @@ for group_name, dataframe_data in stock_df.groupby('Sector'):
     count = 2
     for index, row in dataframe_data.iterrows():
         # Write a URL(hyperlink)
-        row_number = f"A{count}"
+        row_number = f"B{count}"
         worksheet.write_url(row_number, row['Stock URL'],  string = row['Stock'])
         count += 1
 writer.save()
