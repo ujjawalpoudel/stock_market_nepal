@@ -3,6 +3,7 @@ DATE_TODAY = date.today().strftime("%Y_%m_%d")
 
 COMMERCIAL_BANK = [
     'NMB',
+    'GBIME',
     'SBL',
     'NCCB',
     'KBL',
