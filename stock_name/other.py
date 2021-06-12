@@ -1,0 +1,5 @@
+OTHER = [
+    'NFD',
+    'NRIC',
+    'NTC',
+]

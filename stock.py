@@ -87,6 +87,7 @@ for group_name, dataframe_data in stock_df.groupby('Sector'):
     (max_row, max_col) = dataframe.shape
     # Adding an autofilter
     worksheet.autofilter(0, 0, max_row, max_col - 1)
+    worksheet.freeze_panes(1, 1)
 
     col_idx = dataframe.columns.get_loc('Stock')
     writer.sheets[group_name].set_column(col_idx, col_idx, 9.57)
@@ -124,7 +125,7 @@ for group_name, dataframe_data in stock_df.groupby('Sector'):
     count = 2
     for index, row in dataframe_data.iterrows():
         # Write a URL(hyperlink)
-        row_number = f"B{count}"
+        row_number = f"A{count}"
         worksheet.write_url(row_number, row['Stock URL'],  string = row['Stock'])
         count += 1
 writer.save()

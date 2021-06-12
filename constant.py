@@ -1,182 +1,9 @@
+from stock_name import *
+
 from datetime import date
 DATE_TODAY = date.today().strftime("%Y_%m_%d")
 
-COMMERCIAL_BANK = [
-    'NMB',
-    'GBIME',
-    'SBL',
-    'NCCB',
-    'KBL',
-    'LBL',
-    'MBL',
-    'EBL',
-    'NBB',
-    'SBI',
-    'SCB',
-    'NABIL',
-    'CZBIL',
-    'PCBL',
-    'SRBL',
-    'ADBL',
-    'SANIMA',
-    'MEGA',
-    'CBL',
-]
-
-DEVELOPMENT_BANK = [
-    'MDB',
-    'GBBL',
-    'JBBL',
-    'KRBL',
-    'NABBC',
-    'EDBL',
-    'SADBL',
-    'MNBBL',
-    'CORBL',
-    'SINDU',
-    'SHBL',
-    'SHINE',
-    'GRDBL',
-    'MLBL',
-    'KSBBL',
-    'LBBL',
-    'SAPDBL',
-]
-
-FINANCE = [
-    'NFS',
-    'BFC',
-    'GFCL',
-    'PFL',
-    'SIFC',
-    'CFCL',
-    'JFL',
-    'SFCL',
-    'GMFIL',
-    'ICFC',
-    'MPFL',
-    'PROFL',
-    'MFIL',
-    'RLFL',
-    'GUFL',
-]
-
-HOTEL_AND_TOURISIM = [
-    'SHL',
-    'TRH',
-    'OHL',
-    'CGH',
-]
-
-HYDROPOWER = [
-    'NHPC',
-    'BPCL',
-    'CHCL',
-    'AHPC',
-    'SJCL',
-    'SHPC',
-    'RHPC',
-    'RHPL',
-    'BARUN',
-    'UPPER',
-    'AKPL',
-    'CHDC',
-    'API',
-    'DHPL',
-    'NGPL',
-    'RADHI',
-    'KKHC',
-    'GHL',
-    'HURJA',
-    'UMHL',
-]
-
-INVESTMENT = [
-    'CIT',
-    'HIDCL',
-    'NIFRA',
-    'NRN',
-]
-
-LIFE_INSURANCE = [
-    'NLICL',
-    'NLIC',
-    'LICN',
-    'ALICL',
-    'PLIC',
-    'SLICL',
-    'GLICL',
-    'JLI',
-    'PLI',
-    'RLI',
-]
-
-MANUFACTURE_AND_PRODUCT = [
-    'BNL',
-    'NLO',
-    'BNT',
-    'UNL',
-    'SRS',
-    'HDL',
-    'SHIVM',
-]
-
-MICROFINANCE = [
-    'NUBL',
-    'CBBL',
-    'DDBL',
-    'SWBBL',
-    'NLBBL',
-    'MMFDB',
-    'FMDBL',
-    'SMFDB',
-    'RMDC',
-    'SKBBL',
-    'SLBBL',
-    'KMCDB',
-    'JSLBB',
-    'MLBBL',
-    'WOMI',
-    'LLBS',
-    'CLBSL',
-    'VLBS',
-    'FOWAD',
-    'MERO',
-]
-
-NON_LIFE_INSURANCE = [
-    'NICL',
-    'HGI',
-    'UIC',
-    'EIC',
-    'PIC',
-    'NIL',
-    'SIC',
-    'IGI',
-    'PICL',
-    'LGIL',
-    'SICL',
-    'SIL',
-    'NLG',
-    'RBCL',
-    'PRIN',
-    'GIC',
-    'SGI',
-    'AIL',
-]
-
-OTHER = [
-    'NFD',
-    'NTC',
-    'NRIC',
-]
-
-TRADING = [
-    'STC',
-    'BBC',
-]
-
-WATCH_LIST_STOCK = COMMERCIAL_BANK+DEVELOPMENT_BANK+FINANCE+HOTEL_AND_TOURISIM+HYDROPOWER+INVESTMENT+LIFE_INSURANCE+MANUFACTURE_AND_PRODUCT+MICROFINANCE+NON_LIFE_INSURANCE+OTHER+TRADING
+WATCH_LIST_STOCK = COMMERCIAL_BANK+DEVELOPMENT_BANK+FINANCE+HOTEL_AND_TOURISIM+HYDROPOWER+INVESTMENT+LIFE_INSURANCE+MANUFACTURE_AND_PRODUCT+MICROFINANCE+NON_LIFE_INSURANCE+OTHER
 
 COLUMN = [
     'Sector',
@@ -226,8 +53,8 @@ RENAME_COL = {
 }
 
 ARRANGE_COL = [
-    'Change(%)',
     'Stock',
+    'Change(%)',
     'High',
     'Low',
     '180(AVG)',
@@ -244,8 +71,7 @@ ARRANGE_COL = [
     'Right Share',
 ]
 
-
-# datataken = {"draw":1,"recordsTotal":2,"recordsFiltered":2,"data":[{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/stc'>STC<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/stc'>Salt Trading Corporation Limited<\/a>","shares":"1,918,646.00","paidup":"100.00","operationdate":"","paidupcap":"191,864,600.00","marketcap":"20,725,214,092.00","ltp":"10,802.00","date":"2021-06-10","DT_Row_Index":1},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/bbc'>BBC<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/bbc'>Bishal Bazar Company Limited<\/a>","shares":"500,000.00","paidup":"100.00","operationdate":"","paidupcap":"50,000,000.00","marketcap":"3,311,500,000.00","ltp":"6,623.00","date":"2021-06-10","DT_Row_Index":2}]}
+# datataken = {"draw":3,"recordsTotal":49,"recordsFiltered":49,"data":[{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/sabsl'>SABSL<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/sabsl'>Sabaiko Laghubitta Bittiya Sanstha Limited<\/a>","shares":"2,060,273.00","paidup":"100.00","operationdate":"2017-07-14","paidupcap":"206,027,300.00","marketcap":"3,634,321,572.00","ltp":"1,764.00","date":"2021-06-10","DT_Row_Index":41},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/sdlbsl'>SDLBSL<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/sdlbsl'>Sadhana Laghubitta Bittiya Sanstha Limited<\/a>","shares":"2,569,804.00","paidup":"100.00","operationdate":"2017-10-30","paidupcap":"256,980,400.00","marketcap":"4,674,473,476.00","ltp":"1,819.00","date":"2021-06-10","DT_Row_Index":42},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/niclbsl'>NICLBSL<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/niclbsl'>NIC Asia Laghubitta Bittiya Sanstha Limited<\/a>","shares":"17,394,400.00","paidup":"100.00","operationdate":"2017-11-21","paidupcap":"1,739,440,000.00","marketcap":"28,126,744,800.00","ltp":"1,617.00","date":"2021-06-10","DT_Row_Index":43},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/mlbsl'>MLBSL<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/mlbsl'>Mahila Laghubitta Bittiya Sanstha Limited<\/a>","shares":"1,000,000.00","paidup":"100.00","operationdate":"2018-10-18","paidupcap":"100,000,000.00","marketcap":"5,188,000,000.00","ltp":"5,188.00","date":"2021-06-10","DT_Row_Index":44},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/akbsl'>AKBSL<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/akbsl'>Adhikhola Laghubitta Bittiya Sanstha Limited<\/a>","shares":"1,000,000.00","paidup":"100.00","operationdate":"2017-02-12","paidupcap":"100,000,000.00","marketcap":"465,000,000.00","ltp":"465.00","date":"2019-12-19","DT_Row_Index":45},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/uslb'>USLB<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/uslb'>Unnati Sahakarya Laghubitta Bittiya Sanstha Limited<\/a>","shares":"1,761,698.00","paidup":"100.00","operationdate":"","paidupcap":"176,169,800.00","marketcap":"3,930,348,238.00","ltp":"2,231.00","date":"2021-06-10","DT_Row_Index":46},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/klbsl'>KLBSL<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/klbsl'>Kisan Laghubitta Bittiya Sanstha Limited(Former NRN Laghubitta Bittiya Sanstha Limited)<\/a>","shares":"3,928,088.00","paidup":"100.00","operationdate":"","paidupcap":"392,808,800.00","marketcap":"6,481,345,200.00","ltp":"1,650.00","date":"2021-06-10","DT_Row_Index":47},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/aclbsl'>ACLBSL<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/aclbsl'>Aarambha Chautari Laghubitta Bittiya Sanstha Limited<\/a>","shares":"2,867,631.00","paidup":"100.00","operationdate":"","paidupcap":"286,763,100.00","marketcap":"4,588,209,600.00","ltp":"1,600.00","date":"2021-06-10","DT_Row_Index":48},{"symbol":"<a href='https:\/\/www.sharesansar.com\/company\/snlb'>SNLB<\/a>","companyname":"<a href='https:\/\/www.sharesansar.com\/company\/snlb'>Sarathi Nepal Laghubitta Bittiya Sanstha Limited<\/a>","shares":"2,545,187.00","paidup":"100.00","operationdate":"","paidupcap":"254,518,700.00","marketcap":"4,390,447,575.00","ltp":"1,725.00","date":"2021-06-10","DT_Row_Index":49}]}
 
 # for x  in datataken['data']:
 #     import re
@@ -253,3 +79,8 @@ ARRANGE_COL = [
 #     s = x['symbol']
 #     result = re.search('>(.*)<', s).group(1)
 #     print(f"'{result}',")
+
+# data_asscending = OTHER
+# print(len(data_asscending))
+# for x in sorted(data_asscending, reverse=False):
+#     print(f"'{x}',")
