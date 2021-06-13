@@ -3,7 +3,15 @@ from stock_name import *
 from datetime import date
 DATE_TODAY = date.today().strftime("%Y_%m_%d_%A")
 
-WATCH_LIST_STOCK = COMMERCIAL_BANK+DEVELOPMENT_BANK+FINANCE+HOTEL_AND_TOURISIM+HYDROPOWER+INVESTMENT+LIFE_INSURANCE+MICROFINANCE+NON_LIFE_INSURANCE
+WATCH_LIST_STOCK = COMMERCIAL_BANK +\
+                DEVELOPMENT_BANK + \
+                FINANCE + \
+                HOTEL_AND_TOURISIM + \
+                HYDROPOWER + \
+                INVESTMENT + \
+                LIFE_INSURANCE + \
+                MICROFINANCE + \
+                NON_LIFE_INSURANCE
 
 COLUMN = [
     'Sector',
