@@ -15,6 +15,7 @@ HYDROPOWER = [
     'HPPL',
     'HURJA',
     'JOSHI',
+    'KKHC',
     'KPCL',
     'LEC',
     'MEN',
