@@ -7,6 +7,7 @@ WATCH_LIST_STOCK = COMMERCIAL_BANK +\
                 DEVELOPMENT_BANK + \
                 FINANCE + \
                 HYDROPOWER + \
+                HOTEL_AND_TOURISIM + \
                 LIFE_INSURANCE + \
                 MICROFINANCE + \
                 NON_LIFE_INSURANCE
