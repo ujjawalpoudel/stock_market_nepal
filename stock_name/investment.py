@@ -3,4 +3,5 @@ INVESTMENT = [
     'HIDCL',
     'NIFRA',
     'NRN',
+    'CHDC',
 ]

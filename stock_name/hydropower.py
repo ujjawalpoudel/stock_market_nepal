@@ -6,7 +6,6 @@ HYDROPOWER = [
     'BARUN',
     'BPCL',
     'CHCL',
-    'CHDC',
     'CHL',
     'DHPL',
     'GHL',
