@@ -1,4 +1,4 @@
-import re, requests
+import re, requests, os
 import pandas as pd
 from bs4 import BeautifulSoup
 from constant import (
@@ -12,6 +12,7 @@ from constant import (
     ARRANGE_COL,
 )
 
+from path import parent_folder_path
 
 stock_data = []
 for stock_name in WATCH_LIST_STOCK:
@@ -69,6 +70,8 @@ for stock_name in WATCH_LIST_STOCK:
 stock_df = pd.DataFrame(stock_data)
 
 filename = f"stock_market_data_{DATE_TODAY}.xlsx"
+
+filename = os.path.join(parent_folder_path, filename)
 writer = pd.ExcelWriter(filename, engine='xlsxwriter')
 
 for group_name, dataframe_data in stock_df.groupby('Sector'):
