@@ -65,6 +65,26 @@ for stock_name in WATCH_LIST_STOCK:
                             data[header_col] = value
             except AttributeError as e:
                 pass
+    url = f"https://www.sharesansar.com/company/{stock_name}"
+    html = requests.get(url)
+    soup = BeautifulSoup(html.text, 'html.parser')
+
+    table_element = soup.find('table', attrs={'class':'table table-bordered table-striped table-hover text-center company-table'})
+    table_bodies = table_element.find_all('tbody')
+
+    for table_body in table_bodies:
+        rows = table_body.find_all('tr')
+        for row in rows:
+            try:
+                header = row.find_all('td')
+                sharesansar_data ={'name':header[0].text, 'value':header[1].text}
+                if(sharesansar_data['name'] == 'Bonus Share'):
+                    data['% Bonus'] = float(sharesansar_data['value'].split('\n')[0])
+                if(sharesansar_data['name'] == 'Cash Dividend'):
+                    data['% Dividend'] = float(sharesansar_data['value'].split('\n')[0])
+            except Exception as e:
+                pass
+
     stock_data.append(data)
 
 stock_df = pd.DataFrame(stock_data)
