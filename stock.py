@@ -1,4 +1,4 @@
-import re, requests, os
+import re, requests, os, math 
 import pandas as pd
 from bs4 import BeautifulSoup
 from constant import (
@@ -101,6 +101,8 @@ for group_name, dataframe_data in stock_df.groupby('Sector'):
     sum_column = dataframe["Dividend"] + dataframe["Bonus"]
     dataframe["Total"] = sum_column
 
+    dataframe['Graham'] = dataframe.apply(lambda row: round(row['MP']/math.sqrt(22.5*row["Book Value"]*row["PBV"]),3), axis = 1)
+    dataframe = dataframe[dataframe.columns[~dataframe.columns.isin(['Book Value'])]]
     dataframe = dataframe.reindex(columns = ARRANGE_COL)
 
     dataframe.to_excel(writer, sheet_name=group_name, index=False)
@@ -132,8 +134,10 @@ for group_name, dataframe_data in stock_df.groupby('Sector'):
     writer.sheets[group_name].set_column(col_idx, col_idx, 8)
     col_idx = dataframe.columns.get_loc('P/E Ratio')
     writer.sheets[group_name].set_column(col_idx, col_idx, 12.86)
-    col_idx = dataframe.columns.get_loc('Book Value')
-    writer.sheets[group_name].set_column(col_idx, col_idx, 14.86)
+    # col_idx = dataframe.columns.get_loc('Book Value')
+    # writer.sheets[group_name].set_column(col_idx, col_idx, 14.86)
+    col_idx = dataframe.columns.get_loc('Graham')
+    writer.sheets[group_name].set_column(col_idx, col_idx, 11.86)
     col_idx = dataframe.columns.get_loc('PBV')
     writer.sheets[group_name].set_column(col_idx, col_idx, 8.43)
     col_idx = dataframe.columns.get_loc('Dividend')
