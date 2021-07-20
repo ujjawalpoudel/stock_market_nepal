@@ -101,6 +101,8 @@ for group_name, dataframe_data in stock_df.groupby('Sector'):
     sum_column = dataframe["Dividend"] + dataframe["Bonus"]
     dataframe["Total"] = sum_column
 
+    dataframe = dataframe[dataframe.columns[~dataframe.columns.isin(['Right Share'])]]
+
     dataframe = dataframe.reindex(columns = ARRANGE_COL)
 
     dataframe.to_excel(writer, sheet_name=group_name, index=False)
@@ -142,8 +144,8 @@ for group_name, dataframe_data in stock_df.groupby('Sector'):
     writer.sheets[group_name].set_column(col_idx, col_idx, 10.29)
     col_idx = dataframe.columns.get_loc('Total')
     writer.sheets[group_name].set_column(col_idx, col_idx, 9.29)
-    col_idx = dataframe.columns.get_loc('Right Share')
-    writer.sheets[group_name].set_column(col_idx, col_idx, 14.86)
+    # col_idx = dataframe.columns.get_loc('Right Share')
+    # writer.sheets[group_name].set_column(col_idx, col_idx, 14.86)
 
     count = 2
     for index, row in dataframe_data.iterrows():
