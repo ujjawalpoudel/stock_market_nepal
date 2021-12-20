@@ -37,7 +37,7 @@ MICROFINANCE = [
     'SMB',
     'SMFBS',
     'SMFDB',
-    'SNLB',
+    # 'SNLB',
     'SWBBL',
     'USLB',
     'VLBS',
