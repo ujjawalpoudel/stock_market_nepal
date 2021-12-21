@@ -1,7 +1,7 @@
 INVESTMENT = [
-    'CIT',
-    'HIDCL',
-    'NIFRA',
-    'NRN',
-    'CHDC',
+    "CIT",
+    "HIDCL",
+    "NIFRA",
+    "NRN",
+    "CHDC",
 ]

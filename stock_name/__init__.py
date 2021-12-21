@@ -1,11 +1,11 @@
-from . commercial_bank import *
-from . development_bank import *
-from . finance import *
-from . hotel_and_tourism import *
-from . hydropower import *
-from . investment import *
-from . life_insurance import *
-from . manufacturing_and_product import *
-from . microfinance import *
-from . non_life_insurance import *
-from . other import *
+from .commercial_bank import *
+from .development_bank import *
+from .finance import *
+from .hotel_and_tourism import *
+from .hydropower import *
+from .investment import *
+from .life_insurance import *
+from .manufacturing_and_product import *
+from .microfinance import *
+from .non_life_insurance import *
+from .other import *

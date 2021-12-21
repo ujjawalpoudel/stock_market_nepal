@@ -1,5 +1,5 @@
 OTHER = [
-    'NFD',
-    'NRIC',
-    'NTC',
+    "NFD",
+    "NRIC",
+    "NTC",
 ]

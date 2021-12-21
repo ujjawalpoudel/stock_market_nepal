@@ -1,6 +1,6 @@
 MANUFACTURE_AND_PRODUCT = [
-    'BNT',
-    'HDL',
-    'SHIVM',
-    'UNL',
+    "BNT",
+    "HDL",
+    "SHIVM",
+    "UNL",
 ]
