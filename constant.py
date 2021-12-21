@@ -19,7 +19,7 @@ COLUMN = [
     "Sector",
     "Market Price",
     "% Change",
-    "52 Weeks High - Low",
+    "52 Weeks Low - High",
     "180 Day Average",
     "120 Day Average",
     "1 Year Yield",

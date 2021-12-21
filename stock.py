@@ -49,7 +49,7 @@ for stock_name in WATCH_LIST_STOCK:
                         data["Stock"] = stock_name
                         trimmed_cols = re.sub("\n|\r", " ", cols.strip())
                         value = re.sub(" +", " ", trimmed_cols)
-                        if header_col == "52 Weeks High - Low":
+                        if header_col == "52 Weeks Low - High":
                             high_low_val = value.split("-")
                             data["High"] = float(high_low_val[0].replace(",", ""))
                             data["Low"] = float(high_low_val[1].replace(",", ""))
