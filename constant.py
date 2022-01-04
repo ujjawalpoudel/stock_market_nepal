@@ -15,6 +15,9 @@ WATCH_LIST_STOCK = (
     + NON_LIFE_INSURANCE
 )
 
+
+
+
 COLUMN = [
     "Sector",
     "Market Price",
