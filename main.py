@@ -1,17 +1,20 @@
-import re, requests, os
+import os
+import re
+
 import pandas as pd
+import requests
 from bs4 import BeautifulSoup
+
 from constant import (
+    ARRANGE_COL,
     COLUMN,
+    DATE_TODAY,
     FLOAT_COLUMN,
     PERCENTAGE_COLUMN,
     QUATER_REPORT_COLUMN,
-    WATCH_LIST_STOCK,
-    DATE_TODAY,
     RENAME_COL,
-    ARRANGE_COL,
+    WATCH_LIST_STOCK,
 )
-
 from path import parent_folder_path
 
 stock_data = []
@@ -54,9 +57,7 @@ for stock_name in WATCH_LIST_STOCK:
                             data["High"] = float(high_low_val[0].replace(",", ""))
                             data["Low"] = float(high_low_val[1].replace(",", ""))
                         elif header_col in PERCENTAGE_COLUMN:
-                            data[header_col] = float(
-                                value.split("%")[0].strip().replace(",", "")
-                            )
+                            data[header_col] = float(value.split("%")[0].strip().replace(",", ""))
                         elif header_col in FLOAT_COLUMN:
                             if value != "":
                                 data[header_col] = float(value.replace(",", ""))
@@ -64,16 +65,14 @@ for stock_name in WATCH_LIST_STOCK:
                                 data[header_col] = 0
                         elif header_col in QUATER_REPORT_COLUMN:
                             if value != "":
-                                data[header_col] = float(
-                                    value.split("(")[0].replace(",", "")
-                                )
+                                data[header_col] = float(value.split("(")[0].replace(",", ""))
                             else:
                                 data[header_col] = 0
                         elif header_col == "Right Share":
                             data[header_col] = value.split("(")[0].strip()
                         else:
                             data[header_col] = value
-            except AttributeError as e:
+            except AttributeError:
                 pass
     url = f"https://www.sharesansar.com/company/{stock_name}"
     html = requests.get(url)
@@ -81,9 +80,7 @@ for stock_name in WATCH_LIST_STOCK:
 
     table_element = soup.find(
         "table",
-        attrs={
-            "class": "table table-bordered table-striped table-hover text-center company-table"
-        },
+        attrs={"class": "table table-bordered table-striped table-hover text-center company-table"},
     )
     table_bodies = table_element.find_all("tbody")
 
@@ -97,7 +94,7 @@ for stock_name in WATCH_LIST_STOCK:
                     data["% Bonus"] = float(sharesansar_data["value"].split("\n")[0])
                 if sharesansar_data["name"] == "Cash Dividend":
                     data["% Dividend"] = float(sharesansar_data["value"].split("\n")[0])
-            except Exception as e:
+            except Exception:
                 pass
 
     stock_data.append(data)
@@ -111,9 +108,7 @@ writer = pd.ExcelWriter(filename, engine="xlsxwriter")
 
 for group_name, dataframe_data in stock_df.groupby("Sector"):
     # exclude columns you don't want
-    dataframe = dataframe_data[
-        dataframe_data.columns[~dataframe_data.columns.isin(["Sector", "Stock URL"])]
-    ]
+    dataframe = dataframe_data[dataframe_data.columns[~dataframe_data.columns.isin(["Sector", "Stock URL"])]]
     dataframe = dataframe.rename(columns=RENAME_COL)
     sum_column = dataframe["Dividend"] + dataframe["Bonus"]
     dataframe["Total"] = sum_column
